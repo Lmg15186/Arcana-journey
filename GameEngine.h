@@ -10,8 +10,7 @@ class GameEngine {
 public:
     // Construtor e Destrutor
     GameEngine();
-    ~GameEngine(); // Precisamos de um destrutor para limpar a memória dos cards
-
+   
     void run();
 
 private:
