@@ -1,10 +1,18 @@
 #include "Player.hpp"
-#include <iostream>
-using namespace std;
 
-Player::Player(string name) : name(name) {}
+Player::Player() : name(""), zodiacSign(""), wisdomPoints(0) {}
 
-void Player::displayInfo() {
-    cout << "Player: " << name << endl;
+Player::Player(std::string name, std::string zodiacSign)
+    : name(name), zodiacSign(zodiacSign), wisdomPoints(0) {}
+
+void Player::addWisdom(int points) {
+    wisdomPoints += points;
 }
 
+int Player::getWisdomPoints() const {
+    return wisdomPoints;
+}
+
+std::string Player::getZodiacSign() const {
+    return zodiacSign;
+}
