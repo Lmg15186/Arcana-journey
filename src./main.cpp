@@ -1,7 +1,9 @@
-main.cpp
-GameEngine.cpp
-Player.cpp
-TarotCard.cpp
-SignProfile.cpp
-ConsoleUI.cpp
+#include "GameEngine.hpp"
+#include <iostream>
+using namespace std;
 
+int main() {
+    GameEngine game;
+    game.startGame();
+    return 0;
+}
