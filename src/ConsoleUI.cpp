@@ -3,12 +3,16 @@
 using namespace std;
 
 void ConsoleUI::showWelcome() {
-    cout << "Welcome to The Arcana Journey!" << endl;
+    cout << "=====================================" << endl;
+    cout << "  Bem-vindo(a) ao The Arcana Journey!" << endl;
+    cout << "=====================================" << endl;
+    cout << endl;
 }
 
 void ConsoleUI::showCard(const TarotCard& card) {
-    cout << card.getName() << endl;
+    cout << "\nCarta: " << card.getName() << endl;
     cout << card.getDescription() << endl;
+
     int i = 1;
     for (auto& opt : card.getOptions()) {
         cout << i++ << ". " << opt << endl;
@@ -17,12 +21,12 @@ void ConsoleUI::showCard(const TarotCard& card) {
 
 int ConsoleUI::getPlayerChoice() {
     int choice;
-    cout << "Enter your choice: ";
+    cout << "Digite sua escolha (número): ";
     cin >> choice;
     return choice;
 }
 
 void ConsoleUI::showFinalResult(int wisdomPoints) {
-    cout << "Final Wisdom Score: " << wisdomPoints << endl;
+    cout << "\nSua pontuação final de sabedoria foi: " << wisdomPoints << endl;
+    cout << "Obrigado por jogar The Arcana Journey!" << endl;
 }
-
