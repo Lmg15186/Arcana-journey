@@ -1,12 +1,7 @@
-// main.cpp
 #include "GameEngine.h"
 
 int main() {
-    GameEngine game;
-    game.run();
-    
-    // O destrutor do GameEngine cuidará da limpeza da memória.
-    // Não precisamos mais de 'new' ou 'delete' aqui.
-    
+    GameEngine engine;
+    engine.startGame(); // Método que exibe a tela de boas-vindas
     return 0;
 }
