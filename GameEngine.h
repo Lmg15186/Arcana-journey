@@ -4,13 +4,14 @@
 
 #include <vector>
 #include "Player.h"
-#include "Card.h" // Usar a classe base abstrata
+#include "Card.h" 
 
 class GameEngine {
 public:
     // Construtor e Destrutor
     GameEngine();
-   
+    ~GameEngine(); // <--- ADICIONE ESTA LINHA
+
     void run();
 
 private:
@@ -22,8 +23,10 @@ private:
     std::string getFinalReading(int score) const;
 
     Player player;
-    // O baralho agora é um vetor de ponteiros para Card (Polimorfismo)
     std::vector<Card*> deck; 
 };
 
 #endif // GAMEENGINE_H
+
+
+
