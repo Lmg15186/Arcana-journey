@@ -5,12 +5,17 @@
 
 class SignProfile {
 protected:
-    std::string signName;
+    std::string signName; // Nome do signo
+
 public:
+    // Construtor
     SignProfile(std::string signName);
-    virtual bool matchesChoice(int choice) = 0; // pure virtual
+
+    // Método virtual puro: cada signo define sua própria regra
+    virtual bool matchesChoice(int choice) = 0;
+
+    // Retorna o nome do signo
     std::string getSignName() const;
 };
 
 #endif
-
