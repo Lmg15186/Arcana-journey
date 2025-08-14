@@ -1,7 +1,7 @@
 #ifndef CONSOLE_UI_HPP
 #define CONSOLE_UI_HPP
 
-#include "TarotCard.hpp"
+#include "TarotCard.h"
 #include <string>
 
 class ConsoleUI {
