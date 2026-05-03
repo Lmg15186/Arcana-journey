@@ -31,4 +31,36 @@ The game is built around a clean class hierarchy with separation of concerns:
 
 - **Encapsulation** — `Player` keeps state private and exposes only controlled getters and setters.
 - **Inheritance** — `TarotCard` inherits from `Card`; `SpecialTarotCard` inherits from `TarotCard`, forming a 3-level hierarchy.
-- **Polymorphism** — the deck is stored as `v
+- **Polymorphism** — the deck is stored as `vector<Card*>`, and the game loop calls `display()` and `evaluateChoice()` through the base pointer; the correct derived implementation is invoked at runtime.
+- **Abstract Classes** — `Card` declares pure virtual methods (`display()`, `evaluateChoice()`), forcing every derived class to provide its own implementation.
+
+## Technical Highlights
+
+- Virtual destructors for safe polymorphic deletion
+- Random deck shuffling using `std::random_device` and `std::mt19937`
+- Manual heap memory management with cleanup in `GameEngine`'s destructor
+- Const-correctness on read-only methods (`display()`, `getFinalReading()`)
+
+## How to Run
+
+1. Make sure you have a C++ compiler installed (g++ or clang)
+2. Compile the source files:
+```bash
+   g++ -std=c++17 *.cpp -o arcana
+```
+3. Run the game:
+```bash
+   ./arcana
+```
+
+## What I Learned
+
+- Designing a multi-level class hierarchy with abstract base classes
+- Applying polymorphism through base-pointer collections
+- Managing dynamically allocated objects safely with virtual destructors
+- Translating a real-world domain (tarot) into clean OOP code
+- Structuring a game with a dedicated engine class to orchestrate flow
+
+---
+
+Part of my IT learning journey at the Academy of Interactive Technology (AIT) — see more at [github.com/Lmg15186](https://github.com/Lmg15186)
